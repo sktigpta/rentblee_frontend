@@ -75,13 +75,7 @@
     border: 1px solid var(--primary-color);
 }
 
-.banner {
-    width: 90%;
-    overflow: hidden;
-    padding: 1em;
-    display: flex;
-    flex-direction: column;
-}
+
 
 .HDHKNS {
     overflow-x: auto;

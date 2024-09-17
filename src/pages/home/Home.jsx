@@ -10,6 +10,7 @@ const Home = () => {
   return (
     <>
       <div className="view">
+        <HomeBanner/>
       <Categories/>
       <RecomendedProducts/>
       </div>

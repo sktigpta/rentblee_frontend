@@ -1,125 +1,94 @@
-.view{
-    margin-top: 0;
-}
-
 .banner-carousel {
-    position: absolute;
     width: 100%;
-    margin: 0 auto;
+    height: 29em;
+    position: relative;
     overflow: hidden;
-    height: 30em;
-    background: #000;
 }
 
 .banners {
+    width: 100%;
+    height: 100%;
     display: flex;
     transition: transform 0.5s ease-in-out;
-    transform: translateX(0); /* Initial state */
-    width: 100%; /* Ensure banners take up full space */
-}
-
-.banner-item {
-    min-width: 100%; /* Each banner takes full width */
-    height: 400px; /* Consistent height */
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.5s ease-in-out;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; /* Ensure it covers the full width */
-    height: 100%; /* Ensure it covers the full height */
 }
 
-.banner-item.active {
-    opacity: 1; /* Show active banner */
-    z-index: 1; /* Ensure it's above other banners */
-    position: relative; /* Set position to static when active */
+.banner {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    position: absolute;
 }
 
-.banner-item h2 {
-    font-size: 2.5em;
-    font-weight: bold;
-    margin-bottom: 1em;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Add shadow for better readability */
+.banner.active {
+    opacity: 1;
+    position: absolute;
+    left: 0;
 }
 
-.banner-item button {
-    padding: 10px 20px;
-    background-color: #ff5a5f;
+.banner h2 {
     color: white;
-    border: none;
+    font-size: 2.5em;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+}
+
+.dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
     cursor: pointer;
-    border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
-.banner-item button:hover {
-    background-color: #ff787d; /* Darken button on hover */
+.dot.active {
+    background-color: #fff;
 }
 
-.banner-content {
-    text-align: center;
-    height: 30em;
-    width: 100%;
-}
-
-.prev-button, .next-button {
+.prev-button,
+.next-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
-    padding: 10px 15px;
+    font-size: 1.5em;
     cursor: pointer;
-    z-index: 2; /* Ensure it's above the banner items */
-    border-radius: 50%; /* Round buttons */
-    transition: background-color 0.3s ease;
+    z-index: 10;
+    border-radius: 50%;
+    padding: 5px 13px;
 }
 
-.prev-button:hover, .next-button:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* Darken on hover */
+.prev-button:hover,
+.next-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .prev-button {
-    left: 20px;
+    left: 10px;
 }
 
 .next-button {
-    right: 20px;
-}
-
-.dots {
-    text-align: center;
-    margin-top: 20px;
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3; /* Above everything else */
-}
-
-.dot {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    background-color: #bbb;
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.dot.active {
-    background-color: #717171;
-}
-
-.dot:hover {
-    background-color: #888; /* Slightly darken dot on hover */
+    right: 10px;
 }

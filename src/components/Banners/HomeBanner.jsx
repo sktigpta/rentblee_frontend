@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import BannerItem from './BannerItem';
 import './homebanner.css';
 
 import image1 from '../../assets/sliders images/image1.jpg';
@@ -8,50 +7,43 @@ import image3 from '../../assets/sliders images/image3.jpg';
 
 const HomeBanner = () => {
     const [activeIndex, setActiveIndex] = useState(0);
-    
+
     const banners = [
         { id: 1, imageUrl: image1, title: 'Summer Collection' },
         { id: 2, imageUrl: image2, title: 'Winter Collection' },
         { id: 3, imageUrl: image3, title: 'New Arrivals' },
     ];
 
-    // Auto transition every 5 seconds
     useEffect(() => {
         const interval = setInterval(() => {
-            setActiveIndex((prevIndex) => (prevIndex + 1) % banners.length);
-        }, 5000);
-
+            goToNext();
+        }, 3000); // Automatically switch banners every 3 seconds
         return () => clearInterval(interval);
-    }, [banners.length]);
+    }, [activeIndex]);
 
-    const nextBanner = () => {
-        setActiveIndex((prevIndex) => (prevIndex + 1) % banners.length);
+    const goToPrevious = () => {
+        const newIndex = activeIndex === 0 ? banners.length - 1 : activeIndex - 1;
+        setActiveIndex(newIndex);
     };
 
-    const prevBanner = () => {
-        setActiveIndex((prevIndex) => (prevIndex - 1 + banners.length) % banners.length);
+    const goToNext = () => {
+        const newIndex = (activeIndex + 1) % banners.length;
+        setActiveIndex(newIndex);
     };
 
     return (
         <div className="banner-carousel">
-            <button className="prev-button" onClick={prevBanner}>
-                &#10094;
-            </button>
-
-            <div className="banners" style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
+            <div className="banners">
                 {banners.map((banner, index) => (
-                    <BannerItem
+                    <div
                         key={banner.id}
-                        imageUrl={banner.imageUrl}
-                        title={banner.title}
-                        active={index === activeIndex}
-                    />
+                        className={`banner ${index === activeIndex ? 'active' : ''}`}
+                        style={{ backgroundImage: `url(${banner.imageUrl})` }}
+                    >
+                        <h2>{banner.title}</h2>
+                    </div>
                 ))}
             </div>
-
-            <button className="next-button" onClick={nextBanner}>
-                &#10095;
-            </button>
 
             <div className="dots">
                 {banners.map((_, index) => (
@@ -59,9 +51,12 @@ const HomeBanner = () => {
                         key={index}
                         className={`dot ${index === activeIndex ? 'active' : ''}`}
                         onClick={() => setActiveIndex(index)}
-                    ></span>
+                    />
                 ))}
             </div>
+
+            <button className="prev-button" onClick={goToPrevious}>‹</button>
+            <button className="next-button" onClick={goToNext}>›</button>
         </div>
     );
 };
