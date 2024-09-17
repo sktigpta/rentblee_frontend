@@ -40,7 +40,7 @@ const HomeBanner = () => {
                         className={`banner ${index === activeIndex ? 'active' : ''}`}
                         style={{ backgroundImage: `url(${banner.imageUrl})` }}
                     >
-                        <h2>{banner.title}</h2>
+                        {/* <h2>{banner.title}</h2> */}
                     </div>
                 ))}
             </div>
