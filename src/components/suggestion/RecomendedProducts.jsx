@@ -3,7 +3,7 @@ import React from 'react';
 const RecomendedProducts = () => {
     return (
         <>
-            <div className="banner">
+            <div className="recomnended-products">
                 <div style={{
                     justifyContent: "space-between"
                 }} className="d-row">
