@@ -1,0 +1,165 @@
+
+/* Header styles */
+header {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    position: sticky;
+    z-index: 100;
+}
+
+/* Navigation styles */
+nav {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Logo styles */
+nav .logo {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.Mob-logo {
+    display: none;
+}
+
+nav .logo img {
+    height: 1.5em;
+    object-fit: cover;
+}
+
+/* Nav menus styles */
+.nav-menus {
+    height: 90%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Profile styles */
+.nav-menus .profile {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.nav-menus .profile img {
+    width: 100%;
+}
+
+/* Dropdown menu styles */
+.menu {
+    width: 10em;
+    position: absolute;
+    top: calc(100% + 1em);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 101;
+    overflow: hidden;
+}
+
+.menu ul {
+    list-style-type: none;
+    width: 100%;
+}
+
+.menu ul li {
+    padding: 10px;
+    width: 100%;
+    color: #010e06;
+}
+
+.menu ul li .Link {
+    color: #1d1d1d;
+}
+
+.menu ul li:hover {
+    background-color: rgb(195, 255, 195);
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .nav-menus {
+        justify-content: space-between;
+    }
+
+    .form {
+        width: 80%;
+    }
+
+    .menu {
+        width: 50%;
+        right: 1em;
+    }
+
+    header {
+        height: 8vh;
+    }
+
+    .Mob-logo {
+        display: none;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .nav-menus {
+        align-items: flex-end;
+    }
+
+    .form {
+        width: 90%;
+    }
+
+    .menu {
+        width: 10em;
+    }
+
+    header {
+        height: 7vh;
+    }
+
+    header button {
+        padding: 0.5em;
+    }
+
+    nav .logo img {
+        height: 1.2em;
+    }
+
+    nav .logo {
+        display: none;
+    }
+
+    .Mob-logo {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+    nav .Mob-logo img {
+        height: 1.5em;
+        object-fit: cover;
+    }
+}

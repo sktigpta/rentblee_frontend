@@ -1,0 +1,19 @@
+/* google container */
+.social-auth {
+    margin-top: 2em;
+    padding: 1em 2em;
+    background: #ffffff;
+    border-radius: 0.5em;
+    box-shadow: rgba(100, 100, 111, 0.026) 0px 7px 29px 0px;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: ease-in 0.3s;
+}
+
+.social-auth:hover {
+    box-shadow: none;
+}

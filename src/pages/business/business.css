@@ -1,0 +1,95 @@
+.business-hero-banner{
+    width: 50%;
+    height: 90vh;
+    overflow: hidden;
+    object-fit: cover;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.business-hero-banner img{
+    width: 50%;
+    width: 100%;
+
+}
+
+.auth-forms{
+    position: relative;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 90vh;
+}
+
+.headings{
+    position: absolute;
+    top: 1em;
+    left: 1em;
+}
+.auth-forms form{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.btn{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 0.3em;
+    justify-content: space-between;
+}
+.btn button{
+    width: 50%;
+}
+
+.b-form{
+    position: absolute;
+    padding: 0 1em;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .business-hero-banner {
+        width: 30%;
+    }
+    .auth-forms {
+        width: 70%;
+    }
+    .auth-forms form{
+        width: 100%;
+    }
+
+    .b-form{
+        width: 90%;
+        padding: 0 1em;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .business-hero-banner {
+        display: none;
+    }
+    .auth-forms {
+        width: 100%;
+    }
+    .auth-forms form{
+        width: 100%;
+    }
+
+    .b-form{
+        width: 90%;
+        padding: 0 1em;
+    }
+}
